@@ -5,3 +5,4 @@
 - There are seven datasets that will be queried throughout the project.
 - SQLite is being used as the language with DBeaver as the SQL Editor.
 - The project consists of retrieving results for ten different scenarios.
+- To read the business situations/queries cllick [here](https://github.com/jmcclure711/SQL_for_Data_Science/blob/main/queries.sql)
