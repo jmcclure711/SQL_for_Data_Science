@@ -152,10 +152,39 @@ How many states are there?
 */
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
+/*
+Question 9
+List all states with their cheese production values, including states that didn't produce any cheese in April 2023.
+*/
+SELECT 
+	s.State,
+	c.Value
+FROM cheese_production c 
+JOIN 
+	state_lookup s ON c.State_ANSI = s.State_ANSI 
+WHERE 
+	c.Year = 2023
+	AND c.Period = 'APR'
+ORDER BY State
 
+/*Did Delaware produce any cheese in April 2023?
+Answer: No, Delaware was not part of cheese production in 2023.
+*/
 
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------
+/*
+Question 10
+Find the average coffee production for all years where the honey production exceeded 1 million.
+*/
+SELECT 
+	AVG(c.Value) 
+FROM coffee_production c
+WHERE 
+	c.Year IN (
+		SELECT Year
+		FROM honey_production h
+		WHERE h.Value > 1000000
+	);
 
 
 
